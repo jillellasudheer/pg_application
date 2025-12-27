@@ -1,0 +1,554 @@
+
+
+
+/* user admin */
+.user-form-container, .login-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 80px auto 40px; /* top: 80px, sides: auto, bottom: 40px */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(103, 120, 132);
+}
+
+/* Login admin */
+.user-form-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 80px auto 40px; /* top: 80px, sides: auto, bottom: 40px */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(103, 120, 132);
+}
+
+
+
+/* Heading */
+.user-form-container, .login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 22px;
+}
+
+/* Success/Error Message */
+.form-message {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #2575fc;
+}
+
+/* Each form row */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+/* Labels beside input */
+.form-group label {
+  width: 160px; /* Fixed width so inputs align */
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  margin-right: 12px;
+  text-align: right;
+}
+
+/* Inputs */
+.form-group input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
+  outline: none;
+}
+
+/* Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2575fc;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #6a11cb;
+}
+.user-dashboard {
+  
+
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  /* background: linear-gradient(135deg, #74ebd5, #ACB6E5);  */
+ 
+
+  
+}
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+/* Payment buttons */
+.payment-btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Close button */
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.checkmark-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  stroke-width: 2;
+  stroke: #4caf50;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px #4caf50;
+  animation: fillCircle 0.4s ease-in-out forwards;
+  position: relative;
+  background-color: #4caf50;
+}
+
+.checkmark-circle::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 38px;
+  width: 18px;
+  height: 8px;
+  border-left: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(-45deg) scale(0);
+  animation: drawTick 0.5s ease forwards;
+  animation-delay: 0.4s; /* Wait until circle is done */
+}
+
+@keyframes fillCircle {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes drawTick {
+  0% {
+    transform: rotate(-45deg) scale(0);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.success-tick-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tick {
+  width: 20px;
+  height: 10px;
+  border-left: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(-45deg) scale(0);
+  animation: tick-animate 0.5s forwards;
+  animation-delay: 0.3s; /* delay so circle appears first */
+}
+
+@keyframes tick-animate {
+  0% {
+    transform: rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* Container for the form */
+.user-form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+} 
+
+
+/* Form heading
+.user-form-container h2 {
+  text-align: center;
+  color: #2575fc;
+  margin-bottom: 20px;
+} */
+
+/* Form message */
+.form-message {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-bottom: 15px;
+}*/
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #1a5edb;
+}
+
+/* Logout button */
+.user-form-container button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.user-form-container button:hover {
+  background-color: #d32f2f;
+}
+
+/* Room select input */
+.form-group select {
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .user-form-container {
+    padding: 15px 20px;
+  }
+}
+
+.user-form-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+
+
+  
+}
+
+
+
+
+.top-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+} 
+
+ .logout-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover { background: #d32f2f; }  */
+
+ .user-form h2 {
+  text-align: center;
+  color: #2575fc;
+  margin-bottom: 20px;
+}
+
+.form-message {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-bottom: 15px;
+} 
+
+.user-form .form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.user-form .form-row label {
+  flex: 0 0 150px;
+  font-weight: bold;
+  color: #333;
+} 
+
+.user-form .form-row input,
+.user-form .form-row select {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.submit-btn {
+  padding: 10px;
+  width: 100%;
+  background: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} 
+
+ .submit-btn:hover {
+  background: #1a5edb;
+}
+
+@media (max-width: 640px) {
+  .user-form .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .user-form .form-row label {
+    margin-bottom: 5px;
+  }
+}
+ 
+/* chatbot */
+
+/* Floating button */
+.chatbot-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  z-index: 1000;
+}
+.chatbot-button:hover {
+  transform: scale(1.1);
+}
+
+/* Chat window */
+.chatbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+}
+
+/* Slide animation */
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Messages */
+.chatbot-messages {
+  height: 250px;
+  overflow-y: auto;
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+.chat-message {
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 75%;
+  animation: fadeIn 0.2s ease;
+}
+.chat-message.bot {
+  background: #f3f4f6;
+  color: #111;
+  align-self: flex-start;
+}
+.chat-message.user {
+  background: #2563eb;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Options */
+.options {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.options button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.options button:hover {
+  transform: scale(1.05);
+}
+.options .rent { background: #4ade80; color: #fff; }
+.options .ebill { background: #facc15; color: #000; }
+.options .total { background: #f87171; color: #fff; }
+
+/* Input */
+.chat-input {
+  display: flex;
+}
+.chat-input input {
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  padding: 8px;
+}
+.chat-input button {
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  cursor: pointer;
+}
